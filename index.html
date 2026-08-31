@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Invitation — Husnul & Fidah</title>
+    <meta name="description" content="Undangan pernikahan Husnul & Fidah">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <!-- =========================================
+        SCROLL BUTTON
+    ========================================= -->
+
+    <button
+        class="scroll-button"
+        id="scrollButton"
+        aria-label="Scroll ke bawah"
+        type="button"
+    >
+        <span class="scroll-icon">⌄</span>
+    </button>
+
+<body>
+
+    <!-- ======================================
+         COVER PARALLAX
+    ======================================= -->
+   <section class="cover parallax-section" id="cover"> 
+    <!-- Background parallax --> 
+     <div class="parallax-bg" style="background-image: url('images/cover.jpg');"> </div> <!-- Overlay --> 
+     <div class="cover-overlay"></div>
+
+        <div class="cover-content">
+
+            <p class="eyebrow">The Wedding Of</p>
+
+            <h1>
+                Husnul
+                <span>&</span>
+                Fidah
+            </h1>
+
+            <p class="cover-date">19 Desember 2026</p>
+
+            <p class="guest">
+                Kepada Yth.<br>
+                <strong>Bapak/Ibu/Saudara/i</strong>
+            </p>
+
+            <button class="open-button" id="openInvitation">
+                Buka Undangan
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================
+         MAIN CONTENT
+    ======================================= -->
+    <main id="mainContent" class="hidden">
+
+        <!-- MUSIC -->
+        <audio id="weddingMusic" loop>
+            <source src="music/wedding-song.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="music-button" id="musicButton" aria-label="Musik">
+            ♪
+        </button>
+
+
+        <!-- ======================================
+             HERO
+        ======================================= -->
+        <section class="hero section">
+
+            <div class="container">
+
+                <p class="eyebrow">We Are Getting Married</p>
+
+                <h2>
+                    Husnul <span>&</span> Fidah
+                </h2>
+
+                <p class="hero-date">
+                    Sabtu, 19 Desember 2026
+                </p>
+
+                <div class="divider"></div>
+
+                <p class="quote">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah
+                    Dia menciptakan untukmu pasangan hidup dari jenismu
+                    sendiri, supaya kamu merasa tenteram kepadanya."
+                </p>
+
+                <p class="quote-source">
+                    — QS. Ar-Rum: 21
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             COUPLE
+        ======================================= -->
+        <section class="couple section">
+
+            <div class="container">
+
+                <p class="eyebrow">The Couple</p>
+
+                <h2>Mempelai</h2>
+
+                <div class="couple-wrapper">
+
+                    <!-- Groom -->
+                    <article class="person reveal">
+
+                        <div class="person-photo">
+                            <img src="images/groom.jpeg" alt="Mempelai pria">
+                        </div>
+
+                        <h3>Moh. Husnul Murodi</h3>
+
+                        <p class="nickname">Husnul</p>
+
+                        <p>
+                            Putra pertama dari
+                            <br>
+                            <strong>Bapak Moh. Asnawi</strong>
+                            &
+                            <strong>Ibu Masruroh</strong>
+                        </p>
+
+                    </article>
+
+
+                    <div class="ampersand">&</div>
+
+
+                    <!-- Bride -->
+                    <article class="person reveal">
+
+                        <div class="person-photo">
+                            <img src="images/bride.jpeg" alt="Mempelai wanita">
+                        </div>
+
+                        <h3>Lailatul Mufidah</h3>
+
+                        <p class="nickname">Fidah</p>
+
+                        <p>
+                            Putri bungsu dari
+                            <br>
+                            <strong>Bapak ...</strong>
+                            &
+                            <strong>Ibu ...</strong>
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             COUNTDOWN
+        ======================================= -->
+        <section class="countdown-section section">
+
+            <div class="container">
+
+                <p class="eyebrow">Save The Date</p>
+
+                <h2>Menuju Hari Bahagia</h2>
+
+                <div class="countdown">
+
+                    <div class="count-box">
+                        <strong id="days">00</strong>
+                        <span>Hari</span>
+                    </div>
+
+                    <div class="count-box">
+                        <strong id="hours">00</strong>
+                        <span>Jam</span>
+                    </div>
+
+                    <div class="count-box">
+                        <strong id="minutes">00</strong>
+                        <span>Menit</span>
+                    </div>
+
+                    <div class="count-box">
+                        <strong id="seconds">00</strong>
+                        <span>Detik</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             LOVE STORY
+        ======================================= -->
+        <section class="story section">
+
+            <div class="container">
+
+                <p class="eyebrow">Our Journey</p>
+
+                <h2>Love Story</h2>
+
+                <div class="timeline">
+
+                    <article class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <span>Januari 2026</span>
+
+                        <h3>First Meet</h3>
+
+                        <p>
+                            Pertama kali kami bertemu dan mulai
+                            mengenal satu sama lain.
+                        </p>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <span>Februari 2026</span>
+
+                        <h3>First Date</h3>
+
+                        <p>
+                            Sebuah pertemuan sederhana yang akhirnya
+                            menjadi awal perjalanan panjang kami.
+                        </p>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <span>Maret 2026</span>
+
+                        <h3>Engagement</h3>
+
+                        <p>
+                            Dengan restu kedua keluarga, kami memutuskan
+                            untuk melangkah ke jenjang yang lebih serius.
+                        </p>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <span>Desember 2026</span>
+
+                        <h3>Wedding Day</h3>
+
+                        <p>
+                            Hari ketika dua insan memulai perjalanan
+                            baru sebagai satu keluarga.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             EVENT
+        ======================================= -->
+        <section class="event section" id="event">
+
+            <div class="container">
+
+                <!-- Header -->
+                <div class="event-heading reveal">
+                    <span class="eyebrow">Save The Date</span>
+
+                    <h2>Wedding Event</h2>
+
+                    <div class="heading-decoration">
+                        <span></span>
+                        <i>♡</i>
+                        <span></span>
+                    </div>
+
+                    <p class="event-intro">
+                        Dengan penuh kebahagiaan, kami mengundang
+                        Bapak/Ibu/Saudara/i untuk hadir dan
+                        menjadi bagian dari hari istimewa kami.
+                    </p>
+                </div>
+
+
+                <!-- EVENT LIST -->
+                <div class="event-list">
+
+                    <!-- ================= AKAD ================= -->
+                    <article class="event-card reveal">
+
+                        <div class="event-card-inner">
+
+                            <!-- Dekorasi atas -->
+                            <div class="card-ornament ornament-left">❦</div>
+                            <div class="card-ornament ornament-right">❦</div>
+
+                            <!-- Icon -->
+                            <div class="event-icon">
+                                <span>♡</span>
+                            </div>
+
+                            <span class="event-label">
+                                THE CEREMONY
+                            </span>
+
+                            <h3>Akad Nikah</h3>
+
+                            <div class="event-date">
+                                <span class="date-icon">♡</span>
+                                Sabtu, 19 Desember 2026
+                            </div>
+
+                            <div class="event-time">
+                                08.00 — 10.00 WIB
+                            </div>
+
+                            <div class="divider">
+                                <span></span>
+                                <i>✦</i>
+                                <span></span>
+                            </div>
+
+                            <h4>Sport Center Karangagung</h4>
+
+                            <p class="event-address">
+                                 Ds. Karangagung, Kec. Palang, <br>
+                                Kabupaten Tuban, Jawa Timur 62391
+                            </p>
+
+                            <a
+                                href="https://maps.app.goo.gl/48NttrDmNENFf4vC8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="map-button"
+                            >
+                                <span class="button-icon">⌖</span>
+                                Lihat Lokasi
+                                <span class="button-arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ================= RESEPSI ================= -->
+                    <article class="event-card reveal">
+
+                        <div class="event-card-inner">
+
+                            <!-- Dekorasi atas -->
+                            <div class="card-ornament ornament-left">❦</div>
+                            <div class="card-ornament ornament-right">❦</div>
+
+                            <!-- Icon -->
+                            <div class="event-icon">
+                                <span>♡</span>
+                            </div>
+
+                            <span class="event-label">
+                                THE RECEPTION
+                            </span>
+
+                            <h3>Resepsi</h3>
+
+                            <div class="event-date">
+                                <span class="date-icon">♡</span>
+                                Sabtu, 19 Desember 2026
+                            </div>
+
+                            <div class="event-time">
+                                10.00 WIB — Selesai
+                            </div>
+
+                            <div class="divider">
+                                <span></span>
+                                <i>✦</i>
+                                <span></span>
+                            </div>
+
+                            <h4>Sport Center Karangagung</h4>
+
+                            <p class="event-address">
+                                Ds. Karangagung, Kec. Palang, <br>
+                                Kabupaten Tuban, Jawa Timur 62391
+                               
+                            </p>
+
+                            <a
+                                href="https://maps.app.goo.gl/48NttrDmNENFf4vC8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="map-button"
+                            >
+                                <span class="button-icon">⌖</span>
+                                Lihat Lokasi
+                                <span class="button-arrow">→</span>
+                            </a>
+
+                        </div>
+
+                         <!-- ================= NGUNDUH MANTU ================= -->
+                    <article class="event-card reveal">
+
+                        <div class="event-card-inner">
+
+                            <!-- Dekorasi atas -->
+                            <div class="card-ornament ornament-left">❦</div>
+                            <div class="card-ornament ornament-right">❦</div>
+
+                            <!-- Icon -->
+                            <div class="event-icon">
+                                <span>♡</span>
+                            </div>
+
+                            <span class="event-label">
+                                NGUNDUH MANTU
+                            </span>
+
+                            <h3>Ngunduh Mantu</h3>
+
+                            <div class="event-date">
+                                <span class="date-icon">♡</span>
+                                Ahad, 20 Desember 2026
+                            </div>
+
+                            <div class="event-time">
+                                10.00 WIB — Selesai
+                            </div>
+
+                            <div class="divider">
+                                <span></span>
+                                <i>✦</i>
+                                <span></span>
+                            </div>
+
+                            <h4>Rumah Mempelai Pria</h4>
+
+                            <p class="event-address">
+                                Jl. Raya Keprabon, Rt01/Rw01, Ds. Glodog, Kec. Palang,<br>
+                                Kab.Tuban, Jawa Timur
+                            </p>
+
+                            <a
+                                href="https://maps.app.goo.gl/DKGMTNVcMybmJiUf6"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="map-button"
+                            >
+                                <span class="button-icon">⌖</span>
+                                Lihat Lokasi
+                                <span class="button-arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    </article>
+
+                </div>
+
+                <!-- Footer kecil -->
+                <div class="event-footer reveal">
+                    <span>We can't wait to celebrate with you</span>
+                    <div>♡</div>
+                </div>
+
+            </div>
+
+            <!-- Floating decoration -->
+            <div class="event-petal petal-1">♡</div>
+            <div class="event-petal petal-2">✦</div>
+            <div class="event-petal petal-3">♡</div>
+            <div class="event-petal petal-4">✦</div>
+
+        </section>
+
+
+        <!-- ======================================
+             GALLERY
+        ======================================= -->
+        <section class="gallery section">
+
+            <div class="container">
+
+                <p class="eyebrow">Our Memories</p>
+
+                <h2>Gallery</h2>
+
+                <div class="gallery-grid">
+
+                    <img
+                        src="images/galeri1.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                    <img
+                        src="images/galeri2.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                    <img
+                        src="images/galeri3.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                    <img
+                        src="images/galeri4.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                    <img
+                        src="images/galeri5.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                    <img
+                        src="images/galeri6.jpg"
+                        alt="Foto pasangan"
+                        class="gallery-image reveal">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             RSVP
+        ======================================= -->
+        <section class="rsvp section">
+
+            <div class="container">
+
+                <p class="eyebrow">Confirmation</p>
+
+                <h2>RSVP</h2>
+
+                <p>
+                    Mohon konfirmasi kehadiran Anda
+                    sebelum acara berlangsung.
+                </p>
+
+                <form id="rsvpForm">
+
+                    <input
+                        type="text"
+                        id="guestName"
+                        placeholder="Nama Anda"
+                        required>
+
+                    <select id="attendance" required>
+
+                        <option value="">
+                            Konfirmasi Kehadiran
+                        </option>
+
+                        <option value="Hadir">
+                            Saya akan hadir
+                        </option>
+
+                        <option value="Tidak Hadir">
+                            Saya tidak dapat hadir
+                        </option>
+
+                    </select>
+
+                    <input
+                        type="number"
+                        id="guestCount"
+                        min="1"
+                        max="5"
+                        placeholder="Jumlah tamu"
+                        required>
+
+                    <button type="submit" class="primary-button">
+                        Kirim Konfirmasi
+                    </button>
+
+                </form>
+
+                <div id="rsvpMessage"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             WEDDING GIFT
+        ======================================= -->
+        <section class="gift section">
+
+            <div class="container">
+
+                <p class="eyebrow">Wedding Gift</p>
+
+                <h2>Hadiah Pernikahan</h2>
+
+                <p>
+                    Doa dan kehadiran Anda merupakan hadiah
+                    terindah bagi kami. Namun apabila ingin
+                    memberikan tanda kasih, dapat melalui:
+                </p>
+
+
+                <div class="bank-card">
+
+                    <div class="bank-logo">
+                        BANK
+                    </div>
+
+                    <h3>BCA</h3>
+
+                    <p
+                        class="account-number"
+                        id="accountNumber">
+                        1234567890
+                    </p>
+
+                    <p>
+                        a.n. Moh. Husnul Murodi
+                    </p>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyAccount()">
+                        Salin Nomor Rekening
+                    </button>
+
+                    <span id="copyMessage"></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             WISHES
+        ======================================= -->
+        <section class="wishes section">
+
+            <div class="container">
+
+                <p class="eyebrow">Best Wishes</p>
+
+                <h2>Ucapan & Doa</h2>
+
+                <form id="wishForm">
+
+                    <input
+                        type="text"
+                        id="wishName"
+                        placeholder="Nama"
+                        required>
+
+                    <textarea
+                        id="wishText"
+                        rows="4"
+                        placeholder="Tuliskan ucapan dan doa..."
+                        required>
+                    </textarea>
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Kirim Ucapan
+                    </button>
+
+                </form>
+
+
+                <div
+                    class="wish-list"
+                    id="wishList">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             CLOSING PARALLAX
+        ======================================= -->
+        <section class="closing section parallax-section">
+            <div class="parallax-bg" style="background-image: url('images/cover.jpg');"> 
+
+            </div> 
+            <div class="closing-overlay"></div>
+
+            <div class="container">
+
+                <p class="eyebrow">Thank You</p>
+
+                <h2>
+                    Terima Kasih
+                </h2>
+
+                <p>
+                    Merupakan suatu kebahagiaan bagi kami
+                    apabila Bapak/Ibu/Saudara/i berkenan
+                    hadir dan memberikan doa restu.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3>
+                    Husnul & Fidah
+                </h3>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             FOOTER
+        ======================================= -->
+        <footer>
+
+            <p>
+                © 2026 Husnul & Fidah
+            </p>
+
+            <small>
+                Wedding Invitation
+            </small>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
