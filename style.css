@@ -1,0 +1,1643 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --cream: #f8f5ef;
+    --cream-dark: #eee8dc;
+    --brown: #6b5846;
+    --brown-dark: #403429;
+    --gold: #b49a6c;
+    --white: #ffffff;
+    --text: #4d463e;
+
+    --font-title: "Cormorant Garamond", serif;
+    --font-body: "Montserrat", sans-serif;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.container {
+    width: min(100% - 40px, 650px);
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.eyebrow {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    font-weight: 500;
+}
+
+h2 {
+    color: var(--brown-dark);
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+.cover {
+    min-height: 100svh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    overflow: hidden; 
+    color: var(--white);
+}
+
+/* ========================================= 
+PARALLAX BACKGROUND 
+========================================= */ 
+.parallax-section { 
+    position: relative; 
+    overflow: hidden; 
+} 
+.parallax-bg { position: absolute;
+/* 
+Dibuat sedikit lebih besar agar tidak muncul celah putih ketika gambar bergerak. 
+*/ 
+    top: -8%; 
+    left: 0;
+    width: 100%; 
+    height: 116%; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    /* 
+    Nilai ini akan diubah JavaScript ketika halaman di-scroll. 
+    */ transform: translate3d(0, 0, 0); 
+    will-change: transform; 
+    z-index: 0; pointer-events: none; 
+}
+
+/* ========================================= 
+COVER OVERLAY 
+========================================= */
+
+.cover-overlay {
+    position: absolute; 
+    inset: 0; 
+    z-index: 1; 
+    background: linear-gradient( to bottom, rgba(30, 25, 20, .25), rgba(30, 25, 20, .70) ); pointer-events: none;
+}
+
+.cover-content {
+    position: relative; 
+    z-index: 2; 
+    text-align: center; 
+    padding: 30px;
+}
+
+.cover .eyebrow {
+    color: rgba(255,255,255,.8);
+}
+
+.cover h1 {
+    font-size: clamp(65px, 20vw, 110px);
+    line-height: .8;
+
+    margin: 25px 0;
+}
+
+.cover h1 span {
+    display: block;
+
+    font-size: .45em;
+
+    margin: 10px 0;
+}
+
+.cover-date {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.guest {
+    margin-top: 60px;
+
+    font-size: 12px;
+}
+
+.guest strong {
+    font-weight: 600;
+}
+
+.open-button {
+    margin-top: 20px;
+
+    border: 1px solid rgba(255,255,255,.7);
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    padding: 13px 28px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.open-button:hover {
+    background: white;
+    color: var(--brown-dark);
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: var(--brown);
+
+    color: white;
+
+    z-index: 100;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    background: var(--cream);
+}
+
+.hero h2 {
+    font-size: 58px;
+    margin-bottom: 10px;
+}
+
+.hero h2 span {
+    color: var(--gold);
+}
+
+.hero-date {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.quote {
+    max-width: 500px;
+    margin: auto;
+
+    font-family: var(--font-title);
+
+    font-size: 21px;
+    font-style: italic;
+
+    color: var(--brown);
+}
+
+.quote-source {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   COUPLE
+========================================= */
+
+.couple {
+    background: var(--white);
+}
+
+.couple-wrapper {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.person {
+    width: 100%;
+}
+
+.person-photo {
+    width: 190px;
+    height: 190px;
+
+    margin: auto auto 20px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid var(--cream-dark);
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.person h3 {
+    font-size: 31px;
+    color: var(--brown-dark);
+}
+
+.nickname {
+    color: var(--gold);
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.person p:last-child {
+    font-size: 11px;
+}
+
+.ampersand {
+    font-family: var(--font-title);
+
+    font-size: 50px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-section {
+    background: var(--brown-dark);
+    color: white;
+}
+
+.countdown-section h2 {
+    color: white;
+}
+
+.countdown {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.count-box {
+    padding: 15px 5px;
+
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.count-box strong {
+    display: block;
+
+    font-family: var(--font-title);
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+.count-box span {
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story {
+    background: var(--cream);
+}
+
+.timeline {
+    position: relative;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    text-align: left;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 7px;
+    top: 10px;
+    bottom: 0;
+
+    width: 1px;
+
+    background: var(--gold);
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 35px;
+
+    padding-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    border: 1px solid var(--gold);
+}
+
+.timeline-item span {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+    font-size: 28px;
+
+    color: var(--brown-dark);
+}
+
+.timeline-item p {
+    font-size: 12px;
+}
+
+
+/* =========================================
+   EVENT
+========================================= */
+
+.event {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(184, 145, 84, 0.08),
+            transparent 45%
+        ),
+        var(--white);
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+
+/* =========================================
+   EVENT HEADER
+========================================= */
+
+.event-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 45px;
+}
+
+.event-heading .eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.event-heading h2 {
+    margin: 0;
+    font-family: var(--font-title);
+    font-size: clamp(38px, 9vw, 58px);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--brown);
+}
+
+
+/* =========================================
+   DECORATION HEADER
+========================================= */
+
+.heading-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px auto 18px;
+    width: 150px;
+}
+
+.heading-decoration span {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold)
+    );
+}
+
+.heading-decoration span:last-child {
+    background: linear-gradient(
+        90deg,
+        var(--gold),
+        transparent
+    );
+}
+
+.heading-decoration i {
+    font-family: var(--font-title);
+    font-size: 22px;
+    font-style: normal;
+    color: var(--gold);
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+.event-intro {
+    max-width: 460px;
+    margin: auto;
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--brown);
+    opacity: .7;
+}
+
+
+/* =========================================
+   EVENT LIST
+========================================= */
+
+.event-list {
+    display: grid;
+    gap: 25px;
+}
+
+
+/* =========================================
+   EVENT CARD
+========================================= */
+
+.event-card {
+    position: relative;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.65),
+            rgba(246,238,224,.95)
+        );
+    border: 1px solid rgba(184, 145, 84, .25);
+    border-radius: 22px;
+    padding: 1px;
+    box-shadow:
+        0 15px 40px rgba(70, 45, 25, .08);
+
+    overflow: hidden;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease;
+}
+
+
+/* efek garis emas di atas */
+
+.event-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    opacity: .7;
+}
+
+
+/* Inner */
+
+.event-card-inner {
+    position: relative;
+    text-align: center;
+    padding: 38px 24px 35px;
+    border-radius: 21px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,.8),
+            transparent 45%
+        );
+}
+
+
+/* Hover desktop */
+
+@media (hover: hover) {
+
+    .event-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+            0 25px 55px rgba(70, 45, 25, .13);
+    }
+
+}
+
+
+/* =========================================
+   CARD ORNAMENT
+========================================= */
+
+.card-ornament {
+    position: absolute;
+    top: 15px;
+
+    font-family: var(--font-title);
+    font-size: 28px;
+    color: var(--gold);
+
+    opacity: .35;
+}
+
+.ornament-left {
+    left: 18px;
+    transform: rotate(-25deg);
+}
+
+.ornament-right {
+    right: 18px;
+    transform: scaleX(-1) rotate(-25deg);
+}
+
+
+/* =========================================
+   EVENT ICON
+========================================= */
+
+.event-icon {
+    position: relative;
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(184,145,84,.4);
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    background: rgba(255,255,255,.45);
+
+    box-shadow:
+        0 0 0 8px rgba(184,145,84,.05);
+
+    animation:
+        iconFloat 4s ease-in-out infinite;
+}
+
+
+/* lingkaran dekorasi */
+
+.event-icon::before,
+.event-icon::after {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba(184,145,84,.15);
+    border-radius: 50%;
+}
+
+.event-icon::before {
+    transform: scale(1.15);
+}
+
+.event-icon::after {
+    transform: scale(1.3);
+    opacity: .5;
+}
+
+.event-icon span {
+    font-family: var(--font-title);
+    font-size: 32px;
+
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   EVENT LABEL
+========================================= */
+
+.event-label {
+    display: block;
+
+    margin-top: 12px;
+    margin-bottom: 5px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.event-card h3 {
+    margin: 0;
+
+    font-family: var(--font-title);
+    font-size: clamp(32px, 8vw, 42px);
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    color: var(--brown);
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.event-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+.date-icon {
+    font-family: var(--font-title);
+    color: var(--gold);
+    font-size: 15px;
+}
+
+
+/* =========================================
+   TIME
+========================================= */
+
+.event-time {
+    margin-top: 7px;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 180px;
+
+    margin: 25px auto;
+}
+
+.divider span {
+    height: 1px;
+    flex: 1;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184,145,84,.5)
+    );
+}
+
+.divider span:last-child {
+    background: linear-gradient(
+        90deg,
+        rgba(184,145,84,.5),
+        transparent
+    );
+}
+
+.divider i {
+    font-size: 9px;
+    color: var(--gold);
+
+    animation: starRotate 5s linear infinite;
+}
+
+
+/* =========================================
+   VENUE
+========================================= */
+
+.event-card h4 {
+    margin: 0 0 8px;
+
+    font-family: var(--font-title);
+    font-size: 25px;
+    font-weight: 500;
+
+    color: var(--brown);
+}
+
+.event-address {
+    margin: 0;
+
+    font-size: 11px !important;
+    line-height: 1.8;
+
+    color: var(--brown);
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   MAP BUTTON
+========================================= */
+
+.map-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    min-width: 150px;
+
+    padding: 12px 18px;
+
+    border-radius: 50px;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(70,45,25,.15);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+
+/* efek cahaya */
+
+.map-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left .6s ease;
+}
+
+.map-button:hover::before {
+    left: 130%;
+}
+
+.map-button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 25px rgba(70,45,25,.2);
+}
+
+.button-icon {
+    font-size: 14px;
+}
+
+.button-arrow {
+    transition: transform .3s ease;
+}
+
+.map-button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   EVENT FOOTER
+========================================= */
+
+.event-footer {
+    text-align: center;
+    margin-top: 45px;
+
+    color: var(--brown);
+    opacity: .65;
+
+    font-family: var(--font-title);
+    font-size: 16px;
+    font-style: italic;
+}
+
+.event-footer div {
+    margin-top: 7px;
+
+    color: var(--gold);
+    font-size: 20px;
+
+    animation: heartPulse 2s infinite;
+}
+
+
+/* =========================================
+   FLOATING DECORATION
+========================================= */
+
+.event-petal {
+    position: absolute;
+
+    color: var(--gold);
+
+    opacity: .12;
+
+    pointer-events: none;
+
+    animation: floatingPetal 7s ease-in-out infinite;
+}
+
+.petal-1 {
+    top: 15%;
+    left: 5%;
+    font-size: 20px;
+}
+
+.petal-2 {
+    top: 35%;
+    right: 6%;
+    font-size: 12px;
+    animation-delay: 1s;
+}
+
+.petal-3 {
+    bottom: 20%;
+    left: 8%;
+    font-size: 14px;
+    animation-delay: 2s;
+}
+
+.petal-4 {
+    bottom: 10%;
+    right: 10%;
+    font-size: 18px;
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Card kedua muncul sedikit lebih lambat */
+
+.event-card:nth-child(2) {
+    transition-delay: .15s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes starRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes floatingPetal {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(15deg);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .event {
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+    .event-heading {
+        margin-bottom: 38px;
+        padding: 0 10px;
+    }
+
+    .event-intro {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .event-card-inner {
+        padding:
+            35px
+            18px
+            30px;
+    }
+
+    .event-card h4 {
+        font-size: 23px;
+    }
+
+    .event-date {
+        font-size: 10px;
+    }
+
+    .event-time {
+        font-size: 10px;
+    }
+
+    .event-petal {
+        opacity: .08;
+    }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery {
+    background: var(--cream);
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 7px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.gallery-image:hover {
+    transform: scale(.98);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.rsvp {
+    background: var(--white);
+}
+
+.rsvp form,
+.wishes form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    max-width: 500px;
+
+    margin: 30px auto 0;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    border: 1px solid #ddd6cb;
+
+    background: var(--cream);
+
+    padding: 14px 16px;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    color: var(--text);
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gold);
+}
+
+.primary-button {
+    margin-top: 5px;
+}
+
+#rsvpMessage {
+    margin-top: 20px;
+
+    font-size: 11px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================
+   GIFT
+========================================= */
+
+.gift {
+    background: var(--cream-dark);
+}
+
+.bank-card {
+    max-width: 350px;
+
+    margin: 30px auto 0;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #655647,
+        #3e332b
+    );
+
+    color: white;
+
+    text-align: left;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.bank-logo {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    opacity: .7;
+}
+
+.bank-card h3 {
+    font-size: 28px;
+
+    margin-top: 30px;
+}
+
+.account-number {
+    font-family: monospace;
+
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    margin-top: 20px;
+}
+
+.bank-card p {
+    font-size: 10px;
+}
+
+.copy-button {
+    background: white;
+
+    color: var(--brown-dark);
+}
+
+#copyMessage {
+    display: block;
+
+    font-size: 9px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   WISHES
+========================================= */
+
+.wishes {
+    background: var(--white);
+}
+
+.wish-list {
+    max-width: 500px;
+
+    margin: 35px auto 0;
+
+    text-align: left;
+}
+
+.wish-item {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #e6dfd4;
+}
+
+.wish-item strong {
+    font-family: var(--font-title);
+
+    font-size: 21px;
+
+    color: var(--brown-dark);
+}
+
+.wish-item p {
+    font-size: 11px;
+}
+
+
+/* ========================================= 
+CLOSING PARALLAX
+========================================= */ 
+.closing { 
+    position: relative; 
+    overflow: hidden; 
+    color: white; 
+}
+
+/* 
+Background sudah ditangani .parallax-bg 
+*/ 
+.closing-overlay { 
+    position: absolute; 
+    inset: 0; 
+    z-index: 1; 
+    background: linear-gradient( rgba(60, 50, 40, .80), rgba(60, 50, 40, .80) ); pointer-events: none; 
+}
+
+/* 
+Isi closing harus berada di atas background 
+*/ 
+.closing .container { 
+    position: relative; 
+    z-index: 2; 
+}
+
+.closing h2 {
+    color: white;
+
+    font-size: 55px;
+}
+
+.closing h3 {
+    font-size: 35px;
+
+    margin-top: 20px;
+}
+
+.closing p {
+    max-width: 450px;
+
+    margin: auto;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--brown-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 10px;
+}
+
+footer small {
+    opacity: .5;
+}
+
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: min(90%, 900px);
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .couple-wrapper {
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 50px;
+    }
+
+    .person {
+        max-width: 280px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-image {
+        height: 280px;
+    }
+
+}
+/* =========================================
+   SLOW SCROLL BUTTON
+========================================= */
+
+.scroll-button {
+    position: fixed;
+
+    /* Letaknya di atas tombol musik */
+    right: 20px;
+    bottom: 80px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+
+    background: var(--brown);
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 998;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.18);
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease,
+        transform .4s ease,
+        background .3s ease;
+}
+
+
+/* Tombol muncul */
+
+.scroll-button.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Icon */
+
+.scroll-icon {
+    display: block;
+
+    font-size: 23px;
+    line-height: 1;
+
+    transform: translateY(-2px);
+
+    animation:
+        scrollArrow 2s ease-in-out infinite;
+}
+
+
+/* Hover */
+
+.scroll-button:hover {
+    background: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* Animasi panah */
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(-3px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .scroll-button {
+
+        right: 15px;
+
+        /* tetap berada di atas tombol musik */
+        bottom: 78px;
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+}
