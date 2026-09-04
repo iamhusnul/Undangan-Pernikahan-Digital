@@ -295,148 +295,106 @@ Terima kasih.`;
 
 });
 
-/* Backend */
 document.addEventListener('DOMContentLoaded', () => {
-  const rsvpForm = document.getElementById('rsvpForm');
-  const rsvpMessage = document.getElementById('rsvpMessage');
-  
-  // Ganti dengan URL Web App Google Apps Script kamu
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzWted6EXS85swmnQpSgd9xjuV8xdpeDlLFFtt2Fk8BNyhtxJddEcPf5dThc3O287uLw/exec';
 
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      rsvpMessage.textContent = 'Mengirim konfirmasi...';
+    // ==========================================
+    // 1. KONFIGURASI BACKEND (GOOGLE APPS SCRIPT)
+    // ==========================================
+    // Ganti URL di bawah ini dengan URL Web App dari Google Apps Script kamu
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzWted6EXS85swmnQpSgd9xjuV8xdpeDlLFFtt2Fk8BNyhtxJddEcPf5dThc3O287uLw/exec';
 
-      const payload = {
-        name: document.getElementById('guestName').value,
-        attendance: document.getElementById('attendance').value,
-        guestCount: document.getElementById('guestCount').value
-      };
 
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(() => {
-        rsvpMessage.textContent = 'Terima kasih, konfirmasi Anda berhasil dikirim!';
-        rsvpForm.reset();
-      })
-      .catch(error => {
-        rsvpMessage.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
-        console.error('Error:', error);
-      });
-    });
-  }
+    // ==========================================
+    // 2. PENANGANAN FORM RSVP
+    // ==========================================
+    const rsvpForm = document.getElementById('rsvpForm');
+    const rsvpMessage = document.getElementById('rsvpMessage');
+
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            rsvpMessage.textContent = 'Mengirim konfirmasi...';
+
+            const payload = {
+                name: document.getElementById('guestName').value,
+                attendance: document.getElementById('attendance').value,
+                guestCount: document.getElementById('guestCount').value
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                rsvpMessage.textContent = 'Terima kasih, konfirmasi Anda berhasil dikirim!';
+                rsvpForm.reset();
+            })
+            .catch(error => {
+                rsvpMessage.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                console.error('Error RSVP:', error);
+            });
+        });
+    }
+
+
+    // ==========================================
+    // 3. PENANGANAN FORM UCAPAN & DOA (WISHES)
+    // ==========================================
+    const wishForm = document.getElementById('wishForm');
+    const wishList = document.getElementById('wishList');
+
+    if (wishForm) {
+        wishForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('wishName').value;
+            const textInput = document.getElementById('wishText').value;
+
+            // Send data to Google Sheets (Backend)
+            const payload = {
+                action: 'addWish',
+                name: nameInput,
+                text: textInput
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .catch(error => console.error('Error Wishes:', error));
+
+            // Render ucapan baru ke halaman web (Frontend)
+            if (wishList) {
+                const wish = document.createElement('div');
+                wish.className = 'wish-item';
+                wish.innerHTML = `
+                    <strong>${escapeHTML(nameInput)}</strong>
+                    <p>${escapeHTML(textInput)}</p>
+                `;
+                wishList.prepend(wish);
+            }
+
+            wishForm.reset();
+        });
+    }
+
+
+    // ==========================================
+    // 4. HELPER AMAN UNTUK PENCEGAHAN XSS
+    // ==========================================
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+            tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+        );
+    }
+
 });
 
-
-/* =========================================
-   WISHES
-========================================= */
-
-const wishForm =
-    document.getElementById("wishForm");
-
-const wishList =
-    document.getElementById("wishList");
-
-
-wishForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "wishName"
-            ).value;
-
-        const text =
-            document.getElementById(
-                "wishText"
-            ).value;
-
-
-        const wish =
-            document.createElement("div");
-
-
-        wish.className =
-            "wish-item";
-
-
-        wish.innerHTML = `
-            <strong>${escapeHTML(name)}</strong>
-            <p>${escapeHTML(text)}</p>
-        `;
-
-
-        wishList.prepend(wish);
-
-
-        wishForm.reset();
-
-    }
-);
-/* =========================================
-   backend wish
-========================================= */
-
-const wishForm = document.getElementById('wishForm');
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzWted6EXS85swmnQpSgd9xjuV8xdpeDlLFFtt2Fk8BNyhtxJddEcPf5dThc3O287uLw/exec';
-
-if (wishForm) {
-  wishForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nameInput = document.getElementById('wishName').value;
-    const textInput = document.getElementById('wishText').value;
-
-    const payload = {
-      action: 'addWish', // Penanda untuk backend
-      name: nameInput,
-      text: textInput
-    };
-
-    fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-    .then(() => {
-      alert('Terima kasih atas ucapan dan doanya!');
-      wishForm.reset();
-      
-      // Panggil fungsi tampilkan ucapan milikmu di sini agar list langsung terbarui
-      // Contoh: loadWishes(); / renderWishes();
-    })
-    .catch(error => {
-      alert('Gagal mengirim ucapan. Silakan coba lagi.');
-      console.error('Error:', error);
-    });
-  });
-}
-/* =========================================
-   SECURITY
-========================================= */
-
-function escapeHTML(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
-}
 
 /* =========================================
    SLOW SCROLL BUTTON
