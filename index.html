@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
+    
+    <!-- ======================================
+         BACKGROUND GLOBAL
+    ======================================= -->
+    <div class="global-wedding-background"></div>
+    <div class="global-wedding-overlay"></div>
+    
     <!-- =========================================
         SCROLL BUTTON
     ========================================= -->
@@ -23,12 +31,9 @@
         class="scroll-button"
         id="scrollButton"
         aria-label="Scroll ke bawah"
-        type="button"
-    >
+        type="button">
         <span class="scroll-icon">⌄</span>
     </button>
-
-<body>
 
     <!-- ======================================
          COVER PARALLAX
@@ -236,7 +241,7 @@
 
                         <div class="timeline-dot"></div>
 
-                        <span>Januari 2026</span>
+                        <span>Momen Tidak Terduga</span>
 
                         <h3>First Meet</h3>
 
@@ -252,7 +257,7 @@
 
                         <div class="timeline-dot"></div>
 
-                        <span>Februari 2026</span>
+                        <span>Momen Saling Mengenal</span>
 
                         <h3>First Date</h3>
 
@@ -268,7 +273,7 @@
 
                         <div class="timeline-dot"></div>
 
-                        <span>Maret 2026</span>
+                        <span>Momen menegangkan</span>
 
                         <h3>Engagement</h3>
 
@@ -284,7 +289,7 @@
 
                         <div class="timeline-dot"></div>
 
-                        <span>Desember 2026</span>
+                        <span>Momen Bahagia</span>
 
                         <h3>Wedding Day</h3>
 
@@ -387,11 +392,8 @@
 
                         </div>
 
-                    </article>
-
-
                     <!-- ================= RESEPSI ================= -->
-                    <article class="event-card reveal">
+   
 
                         <div class="event-card-inner">
 
@@ -445,7 +447,7 @@
                             </a>
 
                         </div>
-
+                   </article>
                          <!-- ================= NGUNDUH MANTU ================= -->
                     <article class="event-card reveal">
 
@@ -503,7 +505,7 @@
 
                     </article>
 
-                    </article>
+                 
 
                 </div>
 
@@ -654,17 +656,52 @@
 
 
                 <div class="bank-card">
-
-                    <div class="bank-logo">
+                    
+                    
+                    <div class="bank-name">
                         BANK
                     </div>
 
-                    <h3>BCA</h3>
+                    <img 
+                      src="images/bank3.png" 
+                      alt="BCA"
+                      class="bank-logo">
+                    
+                    <p
+                        class="account-number"
+                        id="accountNumber" style="font-size:20px">
+                        1234567890
+                    </p>
+
+                    <p>
+                        a.n. Lailatul Mufidah
+                    </p>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyAccount(this)">
+                        Salin Nomor Rekening
+                    </button>
+
+                    <p class="copy-message"></p>
+
+                </div>
+                
+                <div class="bank-card">
+                   
+                    <div class="bank-name">
+                        BANK
+                    </div>
+
+                    <img 
+                      src="images/bank2.png" 
+                      alt="BCA"
+                      class="bank-logo">
 
                     <p
                         class="account-number"
-                        id="accountNumber">
-                        1234567890
+                        id="accountNumber" style="font-size:20px">
+                        7237336757
                     </p>
 
                     <p>
@@ -673,11 +710,11 @@
 
                     <button
                         class="copy-button"
-                        onclick="copyAccount()">
+                        onclick="copyAccount(this)">
                         Salin Nomor Rekening
                     </button>
 
-                    <span id="copyMessage"></span>
+                    <p class="copy-message"></p>
 
                 </div>
 

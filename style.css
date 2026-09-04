@@ -83,7 +83,7 @@ a {
     color: var(--gold);
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -258,7 +258,12 @@ COVER OVERLAY
 ========================================= */
 
 .hero {
-    background: var(--cream);
+    background:
+        rgba(248, 245, 239, 0.84);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .hero h2 {
@@ -298,7 +303,12 @@ COVER OVERLAY
 ========================================= */
 
 .couple {
-    background: var(--white);
+    background:
+        rgba(255, 255, 255, 0.82);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .couple-wrapper {
@@ -363,7 +373,7 @@ COVER OVERLAY
 ========================================= */
 
 .countdown-section {
-    background: var(--brown-dark);
+    background: rgba(64, 52, 41, 0.92);
     color: white;
 }
 
@@ -415,7 +425,12 @@ COVER OVERLAY
 ========================================= */
 
 .story {
-    background: var(--cream);
+    background:
+        rgba(248, 245, 239, 0.84);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .timeline {
@@ -496,9 +511,11 @@ COVER OVERLAY
         radial-gradient(
             circle at 50% 0%,
             rgba(184, 145, 84, 0.08),
-            transparent 45%
-        ),
-        var(--white);
+            transparent 45%);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
     padding-top: 80px;
     padding-bottom: 90px;
 }
@@ -605,6 +622,11 @@ COVER OVERLAY
             rgba(255,255,255,.65),
             rgba(246,238,224,.95)
         );
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
     border: 1px solid rgba(184, 145, 84, .25);
     border-radius: 22px;
     padding: 1px;
@@ -1220,7 +1242,12 @@ COVER OVERLAY
 ========================================= */
 
 .gallery {
-    background: var(--cream);
+    background:
+        rgba(248, 245, 239, 0.82);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .gallery-grid {
@@ -1252,7 +1279,12 @@ COVER OVERLAY
 ========================================= */
 
 .rsvp {
-    background: var(--white);
+    background:
+        rgba(248, 245, 239, 0.82);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .rsvp form,
@@ -1275,7 +1307,12 @@ select {
 
     border: 1px solid #ddd6cb;
 
-    background: var(--cream);
+    background:
+        rgba(248, 245, 239, 0.88);
+    backdrop-filter:
+        blur(4px);
+    -webkit-backdrop-filter:
+        blur(4px);
 
     padding: 14px 16px;
 
@@ -1314,7 +1351,12 @@ select:focus {
 ========================================= */
 
 .gift {
-    background: var(--cream-dark);
+    background:
+        rgba(248, 245, 239, 0.82);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .bank-card {
@@ -1338,25 +1380,24 @@ select:focus {
 
     box-shadow: 0 15px 40px rgba(0,0,0,.15);
 }
-
 .bank-logo {
-    font-size: 11px;
-
+    width: 90px;
+    height: auto;
+    display: block;
+    margin-bottom: 23px;
+    object-fit: contain;
+}
+.bank-name {
+    font-size: 15px;
     letter-spacing: 2px;
-
     opacity: .7;
 }
 
-.bank-card h3 {
-    font-size: 28px;
-
-    margin-top: 30px;
-}
 
 .account-number {
     font-family: monospace;
 
-    font-size: 22px;
+    font-size: 25px;
 
     letter-spacing: 2px;
 
@@ -1373,12 +1414,11 @@ select:focus {
     color: var(--brown-dark);
 }
 
-#copyMessage {
-    display: block;
-
-    font-size: 9px;
-
+.copy-message {
     margin-top: 5px;
+    font-size: 11px;
+    text-align: center;
+    min-height: 18px;
 }
 
 
@@ -1387,7 +1427,12 @@ select:focus {
 ========================================= */
 
 .wishes {
-    background: var(--white);
+    background:
+        rgba(248, 245, 239, 0.82);
+    backdrop-filter:
+        blur(2px);
+    -webkit-backdrop-filter:
+        blur(2px);
 }
 
 .wish-list {
@@ -1639,5 +1684,85 @@ footer small {
         height: 40px;
 
     }
+
+}
+/* =========================================
+   GLOBAL WEDDING BACKGROUND
+========================================= */
+
+.global-wedding-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+
+    /* GANTI FOTO DI SINI */
+
+    background-image:
+        url("images/bg1.jpg");
+
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+
+    /*
+    Sedikit zoom supaya background
+    terlihat lebih cinematic
+    */
+
+    transform: scale(1.05);
+
+
+    z-index: -3;
+
+}
+
+
+/* =========================================
+   GLOBAL BACKGROUND OVERLAY
+========================================= */
+
+.global-wedding-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+
+    /*
+    Lapisan krem transparan
+
+    Semakin kecil angka terakhir,
+    semakin terlihat background.
+    */
+
+    background:
+
+        linear-gradient(
+            to bottom,
+
+            rgba(248, 245, 239, 0.68),
+
+            rgba(238, 232, 220, 0.78)
+        );
+
+
+    backdrop-filter: blur(2px);
+
+    -webkit-backdrop-filter: blur(2px);
+
+
+    z-index: -2;
 
 }

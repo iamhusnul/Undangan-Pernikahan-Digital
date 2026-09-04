@@ -196,34 +196,41 @@ if ("IntersectionObserver" in window) {
    COPY BANK ACCOUNT
 ========================================= */
 
-function copyAccount() {
+function copyAccount(button) {
+
+    const card = button.closest(".bank-card");
+
+    const accountElement =
+        card.querySelector(".account-number");
+
+    const messageElement =
+        card.querySelector(".copy-message");
 
     const account =
-        document.getElementById(
-            "accountNumber"
-        ).innerText;
+        accountElement.innerText
+            .replace(/\s+/g, "")
+            .trim();
 
-    navigator.clipboard
-        .writeText(account)
+    navigator.clipboard.writeText(account)
         .then(() => {
 
-            document.getElementById(
-                "copyMessage"
-            ).innerText =
+            messageElement.textContent =
                 "Nomor rekening berhasil disalin.";
 
             setTimeout(() => {
 
-                document.getElementById(
-                    "copyMessage"
-                ).innerText = "";
+                messageElement.textContent = "";
 
             }, 2500);
 
+        })
+        .catch(() => {
+
+            messageElement.textContent =
+                "Gagal menyalin nomor rekening.";
+
         });
-
 }
-
 
 /* =========================================
    RSVP
