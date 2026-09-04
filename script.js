@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const rsvpMessage = document.getElementById('rsvpMessage');
   
   // Ganti dengan URL Web App Google Apps Script kamu
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_MW8SBHOFhTdq3TCAfyBMdAgU-1qViyklFxSkvLx3BrnjyCmiWQKHHZW8vBCXcNS_/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzWted6EXS85swmnQpSgd9xjuV8xdpeDlLFFtt2Fk8BNyhtxJddEcPf5dThc3O287uLw/exec';
 
   if (rsvpForm) {
     rsvpForm.addEventListener('submit', function(e) {
@@ -384,8 +384,45 @@ wishForm.addEventListener(
 
     }
 );
+/* =========================================
+   backend wish
+========================================= */
 
+const wishForm = document.getElementById('wishForm');
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzWted6EXS85swmnQpSgd9xjuV8xdpeDlLFFtt2Fk8BNyhtxJddEcPf5dThc3O287uLw/exec';
 
+if (wishForm) {
+  wishForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('wishName').value;
+    const textInput = document.getElementById('wishText').value;
+
+    const payload = {
+      action: 'addWish', // Penanda untuk backend
+      name: nameInput,
+      text: textInput
+    };
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      alert('Terima kasih atas ucapan dan doanya!');
+      wishForm.reset();
+      
+      // Panggil fungsi tampilkan ucapan milikmu di sini agar list langsung terbarui
+      // Contoh: loadWishes(); / renderWishes();
+    })
+    .catch(error => {
+      alert('Gagal mengirim ucapan. Silakan coba lagi.');
+      console.error('Error:', error);
+    });
+  });
+}
 /* =========================================
    SECURITY
 ========================================= */
