@@ -295,6 +295,44 @@ Terima kasih.`;
 
 });
 
+/* Backend */
+document.addEventListener('DOMContentLoaded', () => {
+  const rsvpForm = document.getElementById('rsvpForm');
+  const rsvpMessage = document.getElementById('rsvpMessage');
+  
+  // Ganti dengan URL Web App Google Apps Script kamu
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_MW8SBHOFhTdq3TCAfyBMdAgU-1qViyklFxSkvLx3BrnjyCmiWQKHHZW8vBCXcNS_/exec';
+
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      rsvpMessage.textContent = 'Mengirim konfirmasi...';
+
+      const payload = {
+        name: document.getElementById('guestName').value,
+        attendance: document.getElementById('attendance').value,
+        guestCount: document.getElementById('guestCount').value
+      };
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        rsvpMessage.textContent = 'Terima kasih, konfirmasi Anda berhasil dikirim!';
+        rsvpForm.reset();
+      })
+      .catch(error => {
+        rsvpMessage.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+        console.error('Error:', error);
+      });
+    });
+  }
+});
+
 
 /* =========================================
    WISHES
