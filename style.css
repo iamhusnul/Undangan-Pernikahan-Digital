@@ -97,7 +97,7 @@ h3 {
 
 h2 {
     color: var(--brown-dark);
-    font-size: 42px;
+    font-size: 40px;
     line-height: 1.1;
     margin-bottom: 30px;
 }
@@ -1205,11 +1205,11 @@ COVER OVERLAY
     }
 
     .event-date {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .event-time {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .event-petal {
@@ -1345,6 +1345,82 @@ select:focus {
     color: var(--gold);
 }
 
+.rsvp-container {
+    position: relative;
+}
+
+/* Pesawat */
+.paper-plane {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+
+    font-size: 22px;
+
+    z-index: 5;
+    pointer-events: none;
+
+    animation: planeAround 10s linear infinite;
+}
+
+
+/* Animasi mengitari area RSVP */
+@keyframes planeAround {
+
+    0% {
+        left: 0%;
+        top: -30px;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        left: 85%;
+        top: -30px;
+        transform: rotate(15deg);
+    }
+
+    25% {
+        left: calc(100% - 15px);
+        top: 10%;
+        transform: rotate(75deg);
+    }
+
+    45% {
+        left: calc(100% - 15px);
+        top: 75%;
+        transform: rotate(90deg);
+    }
+
+    50% {
+        left: 85%;
+        top: calc(100% - 10px);
+        transform: rotate(165deg);
+    }
+
+    70% {
+        left: 10%;
+        top: calc(100% - 10px);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        left: -15px;
+        top: 75%;
+        transform: rotate(255deg);
+    }
+
+    95% {
+        left: -15px;
+        top: 10%;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        left: 0%;
+        top: -30px;
+        transform: rotate(360deg);
+    }
+}
 
 /* =========================================
    GIFT
@@ -1361,23 +1437,12 @@ select:focus {
 
 .bank-card {
     max-width: 350px;
-
     margin: 30px auto 0;
-
     padding: 30px;
-
     border-radius: 12px;
-
-    background: linear-gradient(
-        135deg,
-        #655647,
-        #3e332b
-    );
-
+    background: linear-gradient(135deg,#655647,#3e332b);
     color: white;
-
     text-align: left;
-
     box-shadow: 0 15px 40px rgba(0,0,0,.15);
 }
 .bank-logo {
@@ -1752,9 +1817,9 @@ footer small {
         linear-gradient(
             to bottom,
 
-            rgba(248, 245, 239, 0.68),
+            rgba(248, 245, 239, 0.34),
 
-            rgba(238, 232, 220, 0.78)
+            rgba(238, 232, 220, 0.39)
         );
 
 
