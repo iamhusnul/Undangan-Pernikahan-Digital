@@ -198,7 +198,7 @@ if ("IntersectionObserver" in window) {
 
 function copyAccount(button) {
 
-    const card = button.closest(".bank-card");
+    const card = button.closest(".bank-card, .E-card");
 
     const accountElement =
         card.querySelector(".account-number");
