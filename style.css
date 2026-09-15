@@ -258,13 +258,30 @@ COVER OVERLAY
 ========================================= */
 
 .hero {
+    position: relative;
+
+    overflow: hidden;
+
     background:
         rgba(248, 245, 239, 0.84);
+
     backdrop-filter:
         blur(2px);
+
     -webkit-backdrop-filter:
         blur(2px);
 }
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero .container {
+    position: relative;
+    z-index: 5;
+}
+
 
 .hero h2 {
     font-size: 58px;
@@ -278,7 +295,7 @@ COVER OVERLAY
 .hero-date {
     font-size: 16px;
     letter-spacing: 2px;
-    color: var(--brown)
+    color: var(--brown);
 }
 
 .quote {
@@ -289,6 +306,7 @@ COVER OVERLAY
 
     font-size: 21px;
     font-style: italic;
+
     padding: var(--brown-dark);
 
     color: var(--brown);
@@ -297,6 +315,381 @@ COVER OVERLAY
 .quote-source {
     font-size: 10px;
     margin-top: 10px;
+}
+
+
+/* =========================================
+   AREA BUNGA
+========================================= */
+
+.hero-flowers {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   BUNGA UTAMA
+========================================= */
+
+.flower {
+    position: absolute;
+
+    display: block;
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    line-height: 1;
+
+    opacity: .32;
+
+    filter:
+        drop-shadow(0 2px 4px rgba(100, 70, 30, .08));
+
+    transform-origin: center;
+
+    animation:
+        flowerFloat 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   POSISI BUNGA
+========================================= */
+
+/* kiri atas */
+.flower-1 {
+    top: 12%;
+    left: 5%;
+
+    font-size: 38px;
+
+    animation-delay: 0s;
+}
+
+
+/* kiri tengah */
+.flower-2 {
+    top: 38%;
+    left: 11%;
+
+    font-size: 25px;
+
+    opacity: .22;
+
+    animation-delay: -2s;
+}
+
+
+/* kiri bawah */
+.flower-3 {
+    bottom: 16%;
+    left: 4%;
+
+    font-size: 45px;
+
+    opacity: .25;
+
+    animation-delay: -4s;
+}
+
+
+/* kiri paling dalam */
+.flower-4 {
+    bottom: 30%;
+    left: 17%;
+
+    font-size: 20px;
+
+    opacity: .18;
+
+    animation-delay: -1s;
+}
+
+
+/* kanan atas */
+.flower-5 {
+    top: 15%;
+    right: 5%;
+
+    font-size: 42px;
+
+    animation-delay: -3s;
+}
+
+
+/* kanan tengah */
+.flower-6 {
+    top: 42%;
+    right: 10%;
+
+    font-size: 24px;
+
+    opacity: .22;
+
+    animation-delay: -1s;
+}
+
+
+/* kanan bawah */
+.flower-7 {
+    bottom: 15%;
+    right: 4%;
+
+    font-size: 46px;
+
+    opacity: .25;
+
+    animation-delay: -5s;
+}
+
+
+/* kanan paling dalam */
+.flower-8 {
+    bottom: 31%;
+    right: 17%;
+
+    font-size: 21px;
+
+    opacity: .18;
+
+    animation-delay: -2s;
+}
+
+
+/* =========================================
+   ANIMASI BUNGA
+========================================= */
+
+@keyframes flowerFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-8deg)
+            scale(1);
+    }
+
+    25% {
+        transform:
+            translateY(-10px)
+            rotate(4deg)
+            scale(1.03);
+    }
+
+    50% {
+        transform:
+            translateY(-3px)
+            rotate(10deg)
+            scale(1.06);
+    }
+
+    75% {
+        transform:
+            translateY(-12px)
+            rotate(2deg)
+            scale(1.02);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(-8deg)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================
+   KELOPAK BUNGA KECIL
+========================================= */
+
+.petal {
+    position: absolute;
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    animation:
+        petalFall 9s linear infinite;
+}
+
+
+/* posisi kelopak */
+
+.petal-1 {
+    left: 25%;
+    top: 10%;
+
+    animation-delay: 0s;
+}
+
+.petal-2 {
+    left: 38%;
+    top: 4%;
+
+    animation-delay: -3s;
+}
+
+.petal-3 {
+    right: 28%;
+    top: 15%;
+
+    animation-delay: -6s;
+}
+
+.petal-4 {
+    right: 38%;
+    top: 5%;
+
+    animation-delay: -2s;
+}
+
+.petal-5 {
+    left: 60%;
+    top: 12%;
+
+    animation-delay: -5s;
+}
+
+
+/* =========================================
+   ANIMASI KELOPAK
+========================================= */
+
+@keyframes petalFall {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, -20px, 0)
+            rotate(0deg);
+    }
+
+    15% {
+        opacity: .18;
+    }
+
+    50% {
+        opacity: .28;
+
+        transform:
+            translate3d(35px, 180px, 0)
+            rotate(180deg);
+    }
+
+    80% {
+        opacity: .15;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(-20px, 380px, 0)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .hero-date {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .quote {
+        max-width: 320px;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+
+    /* bunga mobile dibuat lebih kecil */
+
+    .flower-1 {
+        left: 2%;
+        top: 12%;
+        font-size: 30px;
+    }
+
+    .flower-2 {
+        left: 7%;
+        top: 37%;
+        font-size: 20px;
+    }
+
+    .flower-3 {
+        left: 2%;
+        bottom: 12%;
+        font-size: 34px;
+    }
+
+    .flower-4 {
+        left: 12%;
+        bottom: 28%;
+        font-size: 17px;
+    }
+
+
+    .flower-5 {
+        right: 2%;
+        top: 14%;
+        font-size: 32px;
+    }
+
+    .flower-6 {
+        right: 7%;
+        top: 40%;
+        font-size: 19px;
+    }
+
+    .flower-7 {
+        right: 2%;
+        bottom: 12%;
+        font-size: 35px;
+    }
+
+    .flower-8 {
+        right: 12%;
+        bottom: 28%;
+        font-size: 17px;
+    }
+
+
+    /* kelopak mobile */
+
+    .petal {
+        font-size: 11px;
+    }
+
 }
 
 
@@ -863,9 +1256,18 @@ COVER OVERLAY
     opacity: .5;
 }
 
-.event-icon span {
-    font-family: var(--font-title);
-    font-size: 32px;
+.event-icon img {
+    position: relative;
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 50%;
 
     animation: heartPulse 2s ease-in-out infinite;
 }
