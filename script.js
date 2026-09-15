@@ -1,4 +1,17 @@
 /* =========================================
+   NAMA TAMU DARI URL (?to=)
+========================================= */
+
+const urlParams = new URLSearchParams(window.location.search);
+const guestNameFromURL = urlParams.get("to");
+
+const coverGuestName = document.getElementById("coverGuestName");
+
+if (coverGuestName && guestNameFromURL) {
+    coverGuestName.textContent = guestNameFromURL;
+}
+
+/* =========================================
    OPEN INVITATION
 ========================================= */
 
