@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Wedding Invitation — Husnul & Fidah</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/iconhf.png">
+     <link rel="apple-touch-icon" sizes="180x180" href="images/iconhf.png">
     <meta name="description" content="Undangan pernikahan Husnul & Fidah">
 
     <!-- WhatsApp / Open Graph Preview -->
@@ -74,7 +76,7 @@
             </p>
 
             <button class="open-button" id="openInvitation">
-                Buka Undangan
+                ✉ Buka Undangan
             </button>
 
         </div>
@@ -752,34 +754,38 @@
                     <div class="bank-name">
                         E-Wllet
                     </div>
-                 <div class="icon-grid">
-                    <img 
-                      src="images/wal1.png" 
-                      class="E-logo">
-                    <img 
-                      src="images/wal2.png"                      
-                      class="E-logo">
-                    <img 
-                      src="images/wal3.png" 
-                      class="E-logo">
-                    <img 
-                      src="images/wal4.png"                    
-                      class="E-logo">
+                    <div class="icon-grid">
+                        <img 
+                        src="images/wal1.png" 
+                        class="E-logo">
+                        <img 
+                        src="images/wal2.png"                      
+                        class="E-logo">
+                        <img 
+                        src="images/wal3.png" 
+                        class="E-logo">
+                        <img 
+                        src="images/wal4.png"                    
+                        class="E-logo">
+                    </div>
 
-                 </div>
-
-                    <p
-                        class="account-number"
-                        id="accountNumber" style="font-size:20px">
-                        089 683 108 622
-                    </p>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyAccount(this)">
-                        Salin Nomor
-                    </button>
-
+    
+                    <div class="phone-buttons">
+                        <!-- Nomor Husnul -->
+                        <button
+                            class="copy-button"
+                            onclick="copyPhone('089683108622', this)">
+                            <span class="phone-name">Husnul</span>
+                            <span class="phone-number">089 683 108 622</span>
+                        </button>
+                        <!-- Nomor Fidah -->
+                        <button
+                            class="copy-button"
+                            onclick="copyPhone('081234567890', this)">
+                            <span class="phone-name">Fidah</span>
+                            <span class="phone-number">085 604 608 205</span>
+                        </button>
+                    </div>
                     <p class="copy-message"></p>
 
                 </div>

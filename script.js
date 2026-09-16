@@ -245,6 +245,31 @@ function copyAccount(button) {
         });
 }
 
+function copyPhone(number, button) {
+
+    navigator.clipboard.writeText(number)
+        .then(() => {
+
+            // Simpan tampilan tombol asli
+            const originalHTML = button.innerHTML;
+
+            // Ubah tombol sementara
+            button.innerHTML = `
+                <span class="phone-name">✓ Tersalin</span>
+                <span class="phone-number">${number}</span>
+            `;
+
+            // Kembalikan setelah 2 detik
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+            }, 2000);
+
+        })
+        .catch(() => {
+            alert("Nomor gagal disalin.");
+        });
+}
+
 /* =========================================
    RSVP
 ========================================= */
