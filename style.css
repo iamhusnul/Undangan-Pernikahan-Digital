@@ -148,7 +148,7 @@ PARALLAX BACKGROUND
 /* 
 Dibuat sedikit lebih besar agar tidak muncul celah putih ketika gambar bergerak. 
 */ 
-    top: -8%; 
+    top: -10%; 
     left: 0;
     width: 100%; 
     height: 116%; 
@@ -308,7 +308,6 @@ COVER OVERLAY
     z-index: 5;
 }
 
-
 .hero h2 {
     font-family: "Allura", cursive;
     font-size: 72px;
@@ -363,7 +362,6 @@ COVER OVERLAY
     z-index: 2;
 }
 
-
 /* =========================================
    BUNGA UTAMA
 ========================================= */
@@ -389,7 +387,6 @@ COVER OVERLAY
     animation:
         flowerFloat 6s ease-in-out infinite;
 }
-
 
 /* =========================================
    POSISI BUNGA
