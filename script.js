@@ -203,7 +203,30 @@ if ("IntersectionObserver" in window) {
     });
 
 }
+/* =========================================
+   tombol Gift
+========================================= */
+// Fungsi untuk membuka modal gift
+function openGiftModal() {
+    const modal = document.getElementById('giftModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Mencegah background ikut di-scroll
+}
 
+// Fungsi untuk menutup modal gift
+function closeGiftModal() {
+    const modal = document.getElementById('giftModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Mengembalikan fungsi scroll body
+}
+
+// Menutup modal jika pengguna mengklik area di luar kotak modal (overlay)
+window.onclick = function(event) {
+    const modal = document.getElementById('giftModal');
+    if (event.target === modal) {
+        closeGiftModal();
+    }
+}
 
 /* =========================================
    COPY BANK ACCOUNT

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Wedding Invitation — Husnul & Fidah</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/iconhf.png">
-     <link rel="apple-touch-icon" sizes="180x180" href="images/iconhf.png">
     <meta name="description" content="Undangan pernikahan Husnul & Fidah">
 
-    <!-- WhatsApp / Open Graph Preview -->
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/iconhf.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/iconhf.png">
+
+    <!-- WhatsApp / Open Graph Preview (Meta untuk Share Link) -->
     <meta property="og:title" content="Undangan Pernikahan Husnul & Fidah">
     <meta property="og:description" content="MINGGU, 20 DESEMBER 2026">
     <meta property="og:image" content="https://iamhusnul.github.io/Undangan-Pernikahan-Digital/images/thumbnile.jpeg">
@@ -19,14 +21,20 @@
     <!-- Twitter / Social Preview -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Undangan Pernikahan Husnul & Fidah">
-    <meta name="twitter:description" content="Undangan Pernikahan Husnul & Fidah">
-    <meta name="twitter:image" content="https://iamhusnul.github.io/Undangan-Pernikahan-Digital/images/thumbnail.jpg">
+    <meta name="twitter:description" content="MINGGU, 20 DESEMBER 2026">
+    <!-- Pastikan nama file gambar thumbnail di bawah ini sesuai dengan file asli Anda (thumbnile.jpeg atau thumbnail.jpg) -->
+    <meta name="twitter:image" content="https://iamhusnul.github.io/Undangan-Pernikahan-Digital/images/thumbnile.jpeg">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- FontAwesome Icons (Sudah diperbaiki format linknya) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.sin.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -231,7 +239,7 @@
                         <p>
                             Putri bungsu dari
                             <br>
-                            <strong>Bapak Lasmadi</strong>
+                            <strong>Bapak Lasmadi (Alm)</strong>
                             &
                             <strong>Ibu Karti (Almh)</strong>
                         </p>
@@ -735,131 +743,94 @@
         </section>
 
 
+       <!-- ======================================
+     TOMBOL / ICON GIFT (UNTUK DI HALAMAN UTAMA)
+     ======================================= -->
+        <div class="wedding-gift-trigger text-center my-4">
+            <button class="btn-open-gift" onclick="openGiftModal()">
+                <i class="fas fa-gift"></i> <!-- Menggunakan FontAwesome untuk icon kado -->
+                <span>Kirim Hadiah Pernikahan</span>
+            </button>
+        </div>
+
+
         <!-- ======================================
-             WEDDING GIFT
-        ======================================= -->
-        <section class="gift section">
-
-            <div class="container">
-
-                <p class="eyebrow">Wedding Gift</p>
-
-                <h2>Hadiah Pernikahan</h2>
-
-                <p>
-                    Doa dan kehadiran Anda merupakan hadiah
-                    terindah bagi kami. Namun apabila ingin
-                    memberikan tanda kasih, dapat melalui:
-                </p>
-
-
-                <div class="bank-card">
-                    
-                    
-                    <div class="bank-name">
-                        BANK
-                    </div>
-
-                    <img 
-                      src="images/bank3.png" 
-                      alt="BCA"
-                      class="bank-logo">
-                    
-                    <p
-                        class="account-number"
-                        id="accountNumber" style="font-size:20px">
-                        178 000 770 8874
-                    </p>
-
-                    <p>
-                        a.n. Lailatul Mufidah
-                    </p>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyAccount(this)">
-                        Salin Nomor Rekening
-                    </button>
-
-                    <p class="copy-message"></p>
-
-                </div>
+            MODAL / LAYER SECTION WEDDING GIFT
+            ======================================= -->
+        <div id="giftModal" class="gift-modal-overlay">
+            <div class="gift-modal-content">
                 
-                <div class="bank-card">
-                   
-                    <div class="bank-name">
-                        BANK
+                <!-- Tombol Close (X) -->
+                <button class="gift-close-btn" onclick="closeGiftModal()">&times;</button>
+
+                <!-- Section Wedding Gift Asli Anda -->
+                <section class="gift section">
+                    <div class="container">
+                        <p class="eyebrow">Wedding Gift</p>
+                        <h2>Hadiah Pernikahan</h2>
+                        <p>
+                            Doa dan kehadiran Anda merupakan hadiah
+                            terindah bagi kami. Namun apabila ingin
+                            memberikan tanda kasih, dapat melalui:
+                        </p>
+
+                        <!-- Bank Card 1 -->
+                        <div class="bank-card">
+                            <div class="bank-name">BANK</div>
+                            <img src="images/bank3.png" alt="BCA" class="bank-logo">
+                            <p class="account-number" id="accountNumber" style="font-size:20px">
+                                178 000 770 8874
+                            </p>
+                            <p>a.n. Lailatul Mufidah</p>
+                            <button class="copy-button" onclick="copyAccount(this)">
+                                Salin Nomor Rekening
+                            </button>
+                            <p class="copy-message"></p>
+                        </div>
+                        
+                        <!-- Bank Card 2 -->
+                        <div class="bank-card">
+                            <div class="bank-name">BANK</div>
+                            <img src="images/bank2.png" alt="BCA" class="bank-logo">
+                            <p class="account-number" id="accountNumber" style="font-size:20px">
+                                723 733 6757
+                            </p>
+                            <p>a.n. Moh. Husnul Murodi</p>
+                            <button class="copy-button" onclick="copyAccount(this)">
+                                Salin Nomor Rekening
+                            </button>
+                            <p class="copy-message"></p>
+                        </div>
+
+                        <!-- E-Wallet Card -->
+                        <div class="E-card">
+                            <div class="bank-name">E-Wallet</div>
+                            <div class="icon-grid">
+                                <img src="images/wal1.png" class="E-logo">
+                                <img src="images/wal2.png" class="E-logo">
+                                <img src="images/wal3.png" class="E-logo">
+                                <img src="images/wal4.png" class="E-logo">
+                            </div>
+                            <div class="phone-buttons">
+                                <!-- Nomor Husnul -->
+                                <button class="copy-button" onclick="copyPhone('089683108622', this)">
+                                    <span class="phone-name">Husnul</span>
+                                    <span class="phone-number">089 683 108 622</span>
+                                </button>
+                                <!-- Nomor Fidah -->
+                                <button class="copy-button" onclick="copyPhone('081234567890', this)">
+                                    <span class="phone-name">Fidah</span>
+                                    <span class="phone-number">085 604 608 205</span>
+                                </button>
+                            </div>
+                            <p class="copy-message"></p>
+                        </div>
+
                     </div>
-
-                    <img 
-                      src="images/bank2.png" 
-                      alt="BCA"
-                      class="bank-logo">
-
-                    <p
-                        class="account-number"
-                        id="accountNumber" style="font-size:20px">
-                        723 733 6757
-                    </p>
-
-                    <p>
-                        a.n. Moh. Husnul Murodi
-                    </p>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyAccount(this)">
-                        Salin Nomor Rekening
-                    </button>
-
-                    <p class="copy-message"></p>
-
-                </div>
-
-                <div class="E-card">
-                   
-                    <div class="bank-name">
-                        E-Wllet
-                    </div>
-                    <div class="icon-grid">
-                        <img 
-                        src="images/wal1.png" 
-                        class="E-logo">
-                        <img 
-                        src="images/wal2.png"                      
-                        class="E-logo">
-                        <img 
-                        src="images/wal3.png" 
-                        class="E-logo">
-                        <img 
-                        src="images/wal4.png"                    
-                        class="E-logo">
-                    </div>
-
-    
-                    <div class="phone-buttons">
-                        <!-- Nomor Husnul -->
-                        <button
-                            class="copy-button"
-                            onclick="copyPhone('089683108622', this)">
-                            <span class="phone-name">Husnul</span>
-                            <span class="phone-number">089 683 108 622</span>
-                        </button>
-                        <!-- Nomor Fidah -->
-                        <button
-                            class="copy-button"
-                            onclick="copyPhone('081234567890', this)">
-                            <span class="phone-name">Fidah</span>
-                            <span class="phone-number">085 604 608 205</span>
-                        </button>
-                    </div>
-                    <p class="copy-message"></p>
-
-                </div>
+                </section>
 
             </div>
-
-        </section>
+        </div>
 
 
         <!-- ======================================
