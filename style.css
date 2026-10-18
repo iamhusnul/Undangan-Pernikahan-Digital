@@ -100,7 +100,12 @@ a {
         letter-spacing: 3px;         /* Kembali ke ukuran letter-spacing aslimu */
     }
 }
-
+.namaku {
+    font-style: italic;
+    font-display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+}
 h1,
 h2,
 h3 {
@@ -2519,6 +2524,97 @@ footer small {
 
     z-index: -3;
 
+}
+
+
+/* ======================================
+   GOLDEN BAMBOO FRAME
+====================================== */
+
+.hero.section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Ilustrasi bambu di sisi kiri dan kanan */
+.golden-bamboo {
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    width: clamp(65px, 13vw, 175px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.78;
+    display: flex;
+    align-items: center;
+}
+
+.golden-bamboo svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sisi kiri */
+.bamboo-left {
+    left: 0;
+    justify-content: flex-start;
+}
+
+/* Sisi kanan: cermin ilustrasi kiri */
+.bamboo-right {
+    right: 0;
+    justify-content: flex-end;
+}
+
+.bamboo-right svg {
+    transform: scaleX(-1);
+}
+
+/* Konten tetap berada di depan dekorasi */
+.hero.section > .container,
+.hero.section > .hero-flowers {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .golden-bamboo {
+        width: clamp(48px, 12vw, 90px);
+        top: 8%;
+        bottom: 8%;
+        opacity: 0.58;
+    }
+}
+
+/* Ponsel */
+@media (max-width: 480px) {
+    .golden-bamboo {
+        width: 48px;
+        top: 12%;
+        bottom: 12%;
+        opacity: 0.42;
+    }
+
+    .hero.section > .container {
+        padding-left: 34px;
+        padding-right: 34px;
+    }
+}
+
+/* Ponsel dengan layar sangat sempit */
+@media (max-width: 350px) {
+    .golden-bamboo {
+        width: 30px;
+        opacity: 0.3;
+    }
+
+    .hero.section > .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }
 
 
