@@ -101,10 +101,27 @@ a {
     }
 }
 .namaku {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-style: italic;
     font-display: block;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 45px;
+}
+
+@media(max-width: 767px) {
+    .namaku{
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+@media(min-width: 768px) {
+    .namaku{
+        flex-direction: row;
+        gap: 15px;
+    }
 }
 h1,
 h2,
